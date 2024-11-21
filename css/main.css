@@ -1,0 +1,276 @@
+:root {
+  --primary: #a5a5a5de;
+  --secondary: #000000;
+  --terciary: #626262a7;
+  --cuartiary: #1F1F1F;
+  --quintary: #ff0303;
+}
+
+body {
+  background-color: var(--cuartiary);
+  font-family: "Lato", sans-serif;
+  color: var(--primary);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section-categories-container {
+  display: flex;
+  padding: 30px;
+}
+
+#cards-container {
+  width: 76%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-category {
+  display: flex;
+  padding: 5%;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 7px;
+}
+
+.zoom-image {
+  transition: transform 0.4s ease;
+}
+
+.zoom-image:hover {
+  transform: scale(1.055);
+}
+
+.game-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+}
+
+.left-game--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-game--container p {
+  margin: 1px;
+  font-size: 12px;
+}
+
+.left-game--container h4 {
+  margin: 0px;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+.card-description {
+  margin-top: 2%;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+}
+
+#publish-container {
+  width: 12%;
+  height: 100vh;
+}
+
+#publish-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#orders-btn-container {
+  display: flex;
+}
+
+.platforms {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  justify-content: space-evenly;
+}
+
+.platform {
+  padding: 15px 25px;
+  font-family: "Lato", system-ui;
+  border: unset;
+  border-radius: 15px;
+  color: var(--primary);
+  z-index: 1;
+  background: var(--secondary);
+  position: relative;
+  font-weight: 1000;
+  font-size: 20px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  width: 300px;
+}
+
+.platform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms
+}
+
+.platform:hover {
+  color: #e8e8e8;
+}
+
+.platform:hover::before {
+  width: 100%;
+}
+
+.more-btn-containter {
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.more-btn {
+  font-family: "Lato", system-ui;
+  font-size: 22px;
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-radius: 9px;
+  background: var(--secondary);
+  color: var(--primary);
+  border: none;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.more-btn:hover {
+  box-shadow: 7px 5px 56px -14px #ddded4;
+}
+
+.more-btn:active {
+  transform: scale(0.97);
+  box-shadow: 7px 5px 56px -10px #ddded4;
+}
+
+.selected {
+  background-color: var(--terciary);
+  /* Cambia esto según tu diseño */
+  color: white;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  /* Light gray */
+  border-top: 6px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+  #publish-container {
+    display: none;
+  }
+
+  #cards-container {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .game-info-container h4 {
+    font-size: 10px;
+    width: 17%;
+  }
+
+  .left-game--container {
+    width: 80%;
+  }
+
+  .left-game--container h4 {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .platform {
+    width: 200px;
+  }
+}
+
+
+@media only screen and (max-width: 425px) {
+  #cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .game-info-container h4 {
+    font-size: 16px;
+    text-align: end;
+    width: 17%;
+  }
+
+  .left-game--container h4 {
+    font-size: 16px;
+    width: 100%;
+    text-align: start;
+    max-width: 250px;
+  }
+
+  .platform {
+    width: 150px;
+    font-size: 14.5px;
+  }
+
+  .left-game--container p {
+    font-size: 15px;
+  }
+}

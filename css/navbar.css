@@ -1,0 +1,129 @@
+@import "./main.css";
+
+/**/
+#categories-container {
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+}
+
+.categories-buttons {
+  font-family: "Lato", system-ui;
+  color: var(--primary);
+  margin-top: 5px;
+  border-radius: 15px;
+  width: 100%;
+  height: 75px;
+  font-size: 22px;
+  border: none;
+  background: none;
+}
+
+.categories-buttons:hover {
+  background: var(--terciary);
+}
+
+.toggleButton {
+  border: none;
+  cursor: pointer;
+}
+
+/* Menú desplegable, inicialmente oculto */
+.dropdownMenu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.dropdown-item {
+  font-family: "Lato", system-ui;
+  color: var(--primary);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 85%;
+  background: none;
+}
+
+.dropdown-item:hover {
+  background: var(--terciary);
+}
+
+#filters-popup {
+  display: none;
+  z-index: 1000;
+  cursor: pointer;
+  position: fixed;
+  color: var(--primary);
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
+  font-size: 22px;
+  border: none;
+  background-color: var(--secondary);
+  text-align: center;
+  align-content: center;
+  top: 25%;
+  left: 2%;
+}
+
+#filters-popup span {
+  font-family: "Lato", system-ui;
+  display: block;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-content {
+  display: none;
+  z-index: 1000;
+  width: 200px;
+  background-color: black;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  #categories-container {
+    display: none;
+  }
+
+  #filters-popup {
+    display: block;
+  }
+
+  .popup-content.active {
+    display: block;
+  }
+
+  .categories-buttons {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  #filters-popup {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    top: 20%;
+    left: 5%;
+  }
+
+  .popup-content {
+    width: 150px;
+  }
+
+  .categories-buttons {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+  }
+
+}

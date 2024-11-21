@@ -1,0 +1,141 @@
+/* survey-styles.css */
+
+/* Reset básico y configuración de caja */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+
+.section-container {
+  border-radius: .25rem;
+  box-shadow: 0 0 .125rem rgba(0, 0, 0, .075);
+  padding: 4rem;
+}
+
+.section-container h2 {
+  padding-bottom: 3rem;
+  font-family: "Lato", system-ui;
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1rem;
+  background-color: transparent;
+  font-family: "Lato", system-ui;
+}
+
+#gender option {
+  background: #1F1F1F;
+  color: #f8f9fa;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: "Lato", system-ui;
+  color: #f8f9fa;
+  font-size: 1rem;
+  width: 100%;
+  padding: .5rem;
+  border: none;
+  border-bottom: 2px solid #9c9c9c48;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+}
+
+
+/* Botones */
+button {
+  font-family: "Lato", system-ui;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button[type="reset"] {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button[type="reset"]:hover {
+  background-color: #5a6268;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+#buttons-send-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#buttons-send-container button {
+  justify-content: space-evenly;
+  width: 200px;
+  font-family: "Lato", system-ui;
+}
+
+@media only screen and (max-width: 768px){
+  #buttons-send-container button {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 425px){
+  #buttons-send-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #buttons-send-container button {
+    width: 70%;
+    margin: 7px;
+  }
+}

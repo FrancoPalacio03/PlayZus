@@ -1,0 +1,271 @@
+@import "./main.css";
+
+body {
+    overflow-x: hidden !important;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+}
+
+/* --- LEFT GAME DATA --- */
+
+.left-gamedata-container {
+    width: 50%;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cover-container {
+    width: 70%;
+    height: 80%;
+    object-fit: contain;
+    padding-bottom: 10px;
+}
+
+.game-info-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-description {
+    max-width: none;
+}
+
+.left-game-info-container {
+    padding-left: 10px;
+    width: 80%;
+
+}
+
+.left-game-info-container h2 {
+    font-size: 50px;
+    margin: 0px;
+    word-wrap: break-word;
+    /* Opción moderna: overflow-wrap: break-word; */
+    white-space: normal;
+}
+
+.left-game-info-container div {
+    display: flex;
+    align-items: center;
+}
+
+#star-symbol {
+    color: gold;
+    padding-left: 2px;
+}
+
+.left-game-info-container p {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.game-info-container h3 {
+    font-size: 40px;
+    margin: 0px;
+    padding-right: 10px;
+}
+
+/* --- RIGHT GAME DATA --- */
+
+.right-gamedata-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr repeat(2, 2fr) 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.game-video-container {
+    /*
+    width: 560px; 
+    height: 315px;
+    */
+    width: 467px;
+    height: 263px;
+    grid-area: 1 / 1 / 2 / 2;
+    margin: auto;
+}
+
+.technical-sheet-container {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.technical-sheet-container div {
+    width: 33.33%;
+}
+
+.technical-sheet-container h2,
+span {
+    margin: 0px;
+    padding: 0px;
+}
+
+.description-container {
+    font-size: 20px;
+    padding-top: 15px;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.button-gamedata-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.action-buttons {
+    width: 150px;
+    height: 60px;
+    font-family: "Lato", system-ui;
+    color: var(--primary);
+    background-color: var(--secondary);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.action-buttons:hover {
+    opacity: 0.85;
+    transform: translateY(-4px);
+    background-color: transparent;
+    border: 1px solid var(--secondary);
+}
+
+.action-buttons:hover .label {
+    color: var(--secondary);
+    ;
+}
+
+.action-buttons:hover svg path {
+    fill: var(--secondary);
+    ;
+}
+
+.action-buttons .label {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.action-buttons svg {
+    fill: var(--primary);
+    ;
+    width: 17px;
+    height: 17px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    #main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-gamedata-container {
+        width: 100%;
+        flex-direction: column;
+        padding: 0px;
+        padding-bottom: 20px;
+    }
+
+    .game-info-container {
+        width: 90%;
+    }
+
+    .game-info-container h3 {
+        font-size: 25px;
+    }
+
+    .right-gamedata-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 40px 0px;
+    }
+
+    .description-container {
+        padding: 15px
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+    .game-info-container h3 {
+        font-size: 14px;
+    }
+
+    .left-game-info-container h2 {
+        font-size: 30px;
+    }
+
+    .left-game-info-container p {
+        font-size: 15px;
+    }
+
+    #star-symbol {
+        font-size: 15px !important;
+    }
+
+    .game-video-container {
+        width: 95%;
+    }
+
+    .technical-sheet-container {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    .technical-sheet-container div {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .technical-sheet-container h2 {
+        font-size: 25px;
+    }
+
+    .description-container {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .button-gamedata-container {
+        padding-top: 30px;
+    }
+
+    .action-buttons label {
+        font-size: 15px;
+    }
+
+}
