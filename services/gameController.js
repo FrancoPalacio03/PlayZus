@@ -1,8 +1,9 @@
 
+const URL= 'https://automatic-waffle-vrxrv4jqg57cqww-3000.app.github.dev/games'
 export async function getGames({ sortBy, platform, genre, category, offset }) {
   try {
       const response = await $.ajax({
-          url: 'http://localhost:3000/games',
+          url: URL,
           method: 'POST',
           contentType: 'application/json',
           data: JSON.stringify({ sortBy, platform, genre, category, offset }), // Añadir offset al request
@@ -18,7 +19,7 @@ export async function getGames({ sortBy, platform, genre, category, offset }) {
 export async function getGameById(id) {
   return new Promise((resolve, reject) => {
       $.ajax({
-          url: 'http://localhost:3000/games',  // URL de la API del servidor
+          url: URL,  // URL de la API del servidor
           method: 'POST',  // Cambiar a POST
           contentType: 'application/json',  // Especificar el tipo de contenido
           data: JSON.stringify({ id }),
@@ -36,7 +37,7 @@ export async function getGameById(id) {
 export async function getGamesBySearch(searchQuery) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: 'http://localhost:3000/games',
+        url: URL,
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ search: searchQuery }), // Pasa el término de búsqueda
