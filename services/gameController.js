@@ -1,5 +1,5 @@
 
-const URL= 'https://automatic-waffle-vrxrv4jqg57cqww-3000.app.github.dev/games'
+const URL= 'https://vigilant-pancake-65j5g6x4r49crjg7-3000.app.github.dev/'
 export async function getGames({ sortBy, platform, genre, category, offset }) {
   try {
       const response = await $.ajax({
